@@ -1,19 +1,19 @@
-#include<stdio.h>
-#include<conio.h>
-#include<math.h>
+#include <stdio.h>
+#include <math.h>
+ 
 int main()
 {
-    int octnum, decnum=0, i=0, rem;
-    printf("Enter any Octal Number: ");
-    scanf("%d", &octnum);
-    while(octnum!=0)
+ 
+    long int octal, decimal = 0;
+    int i = 0;
+ 
+    printf("Enter any octal number: ");
+    scanf("%ld", &octal);
+    while (octal != 0)
     {
-        rem = octnum%10;
-        decnum = decnum + (rem*pow(8,i));
-        i++;
-        octnum = octnum/10;
+        decimal =  decimal +(octal % 10)* pow(8, i++);
+        octal = octal / 10;
     }
-    printf("\nEquivalent Decimal Value = %d", decnum);
-    getch();
+    printf("Equivalent decimal value: %ld",decimal);
     return 0;
 }
